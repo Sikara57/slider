@@ -14,7 +14,22 @@
 
 .modal
 {
-    width:180px;
+    max-height: 75%;
+}
+
+#msg-error
+{
+    color:red;
+}
+
+#disclaimer
+{
+    height:520px;
+}
+
+#birthday
+{
+    width : 150px;
 }
 
 #image 

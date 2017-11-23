@@ -7,6 +7,26 @@ $(document).ready(function(){
     );
     $('#disclaimer').modal('open');
 
+    // Datepicker pour la selection de la date de naissance
+    $('.datepicker').pickadate({
+        default: 'now',
+        format: 'dd/mm/yyyy',
+        monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        monthsShort: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        weekdaysFull: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        weekdaysShort: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 100, // Creates a dropdown of 15 years to control year,
+        min:[1960,1,1],
+        max:true,
+        today: 'Aujourd\'hui',
+        clear: 'Effacer',
+        close: 'Ok',
+        closeOnSelect: false, // Close upon selecting a date,
+        firstDay:1,
+        weekdaysLetter: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
+    });
+
     // initialisation du slider
     var numDiapo=0;
     $('#title').html(diapo[0].titre);
@@ -58,5 +78,34 @@ $(document).ready(function(){
         $('#image img').attr('alt',diapo[numDiapo].titre);
     });
 
+    $('#checkBirthDay').on('click',function(){
+        $('#msg-error').empty();
+
+        var date_naissance = $('#birthday').val();
+        var date_naissance = date_naissance.split('/');
+
+        var today = new Date();
+        var jour = parseInt(date_naissance[0]);
+        var mois = parseInt(date_naissance[1]);
+        var annee = parseInt(date_naissance[2]);
+
+        if(annee<today.getFullYear()-18) 
+        {
+            $('#disclaimer').modal('close');
+        }
+        else if(annee==today.getFullYear()-18 && mois<today.getMonth()+1)
+        {
+            $('#disclaimer').modal('close');
+        }
+        else if(annee==today.getFullYear()-18 && mois==today.getMonth()+1 && jour<=today.getDate())
+        {
+            $('#disclaimer').modal('close');
+        }
+        else
+        {
+            $('#msg-error').html('Vous n\'avez pas l\'âge requis pour visiter le site !');
+        }
+
+    });
 });
 

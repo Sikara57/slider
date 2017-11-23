@@ -1,0 +1,47 @@
+.imgSlider
+{
+    height:300px;
+    width:100%;
+    border:1px solid black;
+    padding:20px;
+}
+
+.prec,.suiv
+{
+    width:20px;
+    margin:auto;
+}
+
+.modal
+{
+    width:180px;
+}
+
+#image 
+{
+    height:100%;
+}
+
+#image img
+{
+    max-width:100%;
+    max-height:100%;
+}
+
+#description 
+{
+    height:100%;
+    overflow:auto;
+    text-align: justify;
+}
+
+
+/*
+
+    Les classes :
+    - row / col / s10 / offset-s10 : sont le système de grille de materialize
+    - modal / modal-* : sont les classes du composants modal de materialize (popup)
+    - center / valign-wrapper / center-align : système de positionnement de materialize
+    - btn / waves-* : classe des boutons materialize
+
+*/

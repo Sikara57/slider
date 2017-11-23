@@ -27,6 +27,12 @@ $(document).ready(function(){
         weekdaysLetter: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
     });
 
+    // Initialisation des thumbnails
+    for (let index = 0; index < diapo.length; index++) {
+        const elt = diapo[index];
+        $('#thumbnail').prepend('<img src="'+elt.image+'" alt="'+elt.titre+'">')
+    }
+
     // initialisation du slider
     var numDiapo=0;
     $('#title').html(diapo[0].titre);

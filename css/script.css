@@ -32,12 +32,19 @@
     width : 150px;
 }
 
-#image 
+#image,#thumbnail 
 {
     height:100%;
 }
 
-#image img
+#thumbnail
+{
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color: black;
+}
+
+#image img, #thumbnail img
 {
     max-width:100%;
     max-height:100%;

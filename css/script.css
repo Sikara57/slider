@@ -1,0 +1,82 @@
+.imgSlider
+{
+    height:300px;
+    width:100%;
+    border:1px solid black;
+    padding:20px;
+    display:flex;
+}
+
+.prec,.suiv
+{
+    width:20px;
+    margin:auto;
+}
+
+#msg-error
+{
+    color:red;
+}
+
+#disclaimer
+{
+    height:370px;
+}
+
+#birthday
+{
+    width : 150px;
+}
+
+#image
+{
+    height:100%;
+}
+
+#thumbnail
+{
+    padding-top:5px;
+    padding-bottom:15px;
+    background-color: black;
+    border-radius:15px;
+    height:240px;
+    margin:auto;
+}
+
+#image img, #thumbnail img
+{
+    max-width:100%;
+    max-height:100%;
+}
+
+#thumbnail_corps
+{
+    height:80%;
+}
+
+#thumbnail_corps img
+{
+    opacity:0.7;
+}
+
+#description 
+{
+    height:100%;
+    overflow:auto;
+    text-align: justify;
+}
+
+#prev_thumbnail, #suiv_thumbnail
+{
+    color:white;
+}
+
+/*
+
+    Les classes :
+    - row / col / s10 / offset-s10 : sont le système de grille de materialize
+    - modal / modal-* : sont les classes du composants modal de materialize (popup)
+    - center / valign-wrapper / center-align : système de positionnement de materialize
+    - btn / waves-* : classe des boutons materialize
+
+*/
